@@ -1,0 +1,19 @@
+@startuml SequenceDiagramJavaapp
+
+Actor User #SkyBlue
+participant UI
+participant springboot.MixMavenController
+participant Datahandler
+participant UtilityJson
+
+User -> UI : Create drink
+UI -> springboot.MixMavenController : Create new drink
+springboot.MixMavenController -> Datahandler : Add drink to model
+Datahandler -> UtilityJson : Save model to file
+UtilityJson -> Datahandler : Read model from file
+Datahandler -> springboot.MixMavenController : Get model
+springboot.MixMavenController -> UI : List of drinks
+UI -> User : Display all drinks
+
+@enduml
+

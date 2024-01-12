@@ -1,0 +1,89 @@
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.layout-content {
+  flex: 1;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 4rem;
+  transition: 0.5s ease;
+}
+
+nav a {
+  text-decoration: none;
+  cursor: pointer;
+  color: black;
+}
+
+nav a h1 {
+  margin: 0;
+  font-size: 4rem;
+  font-family: 'Major Mono Display', monospace;
+}
+
+nav ul {
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  font-size: large;
+}
+
+nav li {
+  display: flex;
+  min-width: fit-content;
+}
+
+nav li a {
+  padding: 1rem;
+  color: black;
+  font-size: larger;
+  font-weight: 600;
+  border-radius: 0.2rem;
+  transition: 0.2s ease;
+
+  &:active {
+    transform: scale(0.95);
+  }
+  &:hover {
+    color: #555;
+  }
+}
+
+nav li a.active {
+  color: skyblue;
+  &:hover {
+    color: rgb(119, 190, 218);
+  }
+}
+
+.layout-footer {
+  width: 100%;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+.layout-footer a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  color: black;
+  text-decoration: none;
+  transition: 0.25s ease;
+
+  &:hover {
+    color: skyblue;
+  }
+}
+
+.layout-footer svg {
+  color: skyblue;
+  transition: 0.25s ease;
+}

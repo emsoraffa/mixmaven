@@ -1,0 +1,35 @@
+@startuml architecture
+component core{
+    package mixmaven.core{
+
+    }
+    
+}
+component ui {
+    package mixmaven.ui{
+
+    }
+    
+}
+
+component javafx{
+    component fxml{
+
+    }
+
+}
+component json {
+    package mixmaven.json{
+    }
+}
+
+component gson{
+
+}
+
+ui..> javafx
+ui ..> fxml
+mixmaven.ui ..> mixmaven.core
+mixmaven.ui ..> mixmaven.json
+mixmaven.json ..> gson
+@enduml

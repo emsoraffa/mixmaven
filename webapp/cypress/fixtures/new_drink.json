@@ -1,0 +1,21 @@
+{
+  "id": "c5859006-9c3d-3e60-4346-764494f9da52",
+  "name": "Gin & Tonic",
+  "ingredients": [
+    {
+      "name": "Gin",
+      "type": "alcohol",
+      "alcoholPercentage": 40,
+      "amount": 2,
+      "unit": "cl"
+    },
+    {
+      "name": "Tonic",
+      "type": "mixer",
+      "alcoholPercentage": 0,
+      "amount": 2,
+      "unit": "dl"
+    }
+  ],
+  "alcoholContent": 3.6363636363636362
+}

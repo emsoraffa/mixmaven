@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Nanum+Gothic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+:root {
+  /* font-family: 'Nanum Gothic', sans-serif; */
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light;
+  /* color: rgba(255, 255, 255, 0.87); */
+  background-color: var(--clr-bg-light);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+  --clr-bg-light: rgb(245, 246, 250);
+  --clr-bg-dark: rgb(235, 236, 240);
+  --clr-bg-darker: rgb(225, 226, 230);
+
+  --clr-text: black;
+
+  --clr-yellow-400: rgb(255, 221, 143);
+  --clr-yellow-300: rgb(255, 244, 204);
+  --clr-purple-400: rgb(223, 161, 253);
+  --clr-purple-300: rgb(239, 207, 252);
+  --clr-blue-300: rgb(165, 226, 249);
+  --clr-blue-400: rgb(101, 204, 241);
+}
+
+body {
+  margin: 0;
+  overflow-y: scroll;
+}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.ScrollPane?>
+
+<AnchorPane fx:id="browseDrinksPane" prefHeight="540.0" prefWidth="800.0" stylesheets="@styles/MixMaven.css" xmlns="http://javafx.com/javafx/" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <ScrollPane fx:id="scrollPane" prefHeight="540" prefWidth="600" fitToWidth="true">
+            <content>
+                <VBox fx:id="drinkContainer" spacing="10" />
+            </content>
+        </ScrollPane>
+    </children>
+</AnchorPane>

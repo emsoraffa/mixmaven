@@ -1,0 +1,135 @@
+@startuml UiClassDiagram
+
+Class AddDrinkController {
+    -Label errorLabel
+    -TextField drinkNameField
+    -TextField ingredientNameField
+    -TextField alchoholPercentField
+    -TextField amountField
+    -ListView<Ingredient> ingredientList
+    -ChoiceBox<String> typeChoiceBox
+    -ChoiceBox<String> unitChoiceBox
+    -List<Ingredient> selectedIngredients
+	-MixMavenController mixMavenController
+
+    +AddDrinkController()
+    +initialize()
+    +deleteIngredientBtn()
+    +addIngredientBtn()
+    +backBtn()
+    +addDrinkBtn()
+    -clearFields()
+}
+
+class BrowseDrinkController {
+    -AnchorPane browseDrinksPane
+    -ScrollPane scrollPane
+    -VBox drinkContainer
+    -Button addDrinkBtn
+    -List<Drink> drinks
+    -MixMavenController mixMavenController
+    
+    +BrowseDrinksController()
+    +initialize()
+}
+
+interface DataAccess {
+    +getDrinks()
+    +getModel()
+    +deleteDrink()
+    +addDrink()
+    +editDrink()
+    +setFilePath()
+}
+
+class DirectDataAccess {
+    -MixMavenModel mixMavenModel
+    -DataHandler dataHandler
+
+    +DirectDataAccess()
+    +getDrinks()
+    +deleteDrink()
+    +addDrink()
+    +editDrink()
+    +setFilePath()
+    +refreshModel()
+    +getModel()
+}
+
+class EditDrinkController {
+    - Label errorLabel
+	-TextField drinkNameField
+	-TextField ingredientNameField
+	-TextField alchoholPercentField
+	-TextField amountField
+	-ListView<Ingredient> ingredientList
+	-ChoiceBox<String> typeChoiceBox
+	-ChoiceBox<String> unitChoiceBox
+	-List<Ingredient> selectedIngredients
+	-MixMavenController mixMavenController
+
+    +EditDrinkController()
+    +initialize()
+    -clearFields()
+    +deleteIngredientBtn()
+    +editIngredientBtn()
+    +addIngredientBtn()
+    +backBtn()
+    +editDrinkBtn()
+}
+
+class MixMavenApp {
+    +start()
+    +<u>main()
+}
+
+class MixMavenController {
+    -StackPane contentPane
+    -String drinkId
+    -AddDrinkController addDrinkController
+    -BrowseDrinksController browseDrinksController
+    -EditDrinkController editDrinkController
+    -DataAccess dataAccess
+
+    +initialize()
+    -syncWithServer()
+    +showAddDrink()
+    +showBrowseDrinks()
+    +showEditDrink()
+    -showContent()
+    -showContentEdit()
+    +getDrinkId()
+    -setDrinkId()
+    +getDataAccess()
+}
+
+class RemoteDataAccess {
+    -URI endpointBaseUri
+    -<u>String APPLICATION_JSON
+    -<u>String ACCEPT_HEADER
+    -<u>String CONTENT_TYPE_HEADER
+    -MixMavenModel mixMavenModel
+    -Gson gson
+
+    +RemoteDataAccess()
+    +getModel()
+    +getDrinks()
+    +deleteDrink()
+    +addDrink()
+    +editDrink()
+    +setFilePath()
+    -uriParam()
+    -fromJson()
+    -toJson()
+    -URI drinkUri()
+}
+
+AddDrinkController --> MixMavenController : Uses
+BrowseDrinkController --> MixMavenController : Uses
+EditDrinkController --> MixMavenController : Uses
+DirectDataAccess .-|> DataAccess : Implements
+RemoteDataAccess .-|> DataAccess : Implements
+MixMavenApp --* MixMavenController : Contains
+DataAccess --> MixMavenController : Uses
+
+@enduml

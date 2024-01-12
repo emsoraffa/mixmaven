@@ -1,0 +1,89 @@
+{
+  "name": "webapp",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint . && prettier '**/*.{ts,tsx,js,css,md,json}' --check",
+    "prettier": "prettier '**/*.{ts,tsx,js,css,md,json}' --write",
+    "cy:run": "cypress run --e2e",
+    "cy:open": "cypress open --e2e"
+  },
+  "dependencies": {
+    "@formkit/auto-animate": "^0.8.0",
+    "@mui/icons-material": "^5.14.14",
+    "@tanstack/react-query": "^5.0.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-loading": "^2.0.3",
+    "react-router-dom": "^6.17.0"
+  },
+  "devDependencies": {
+    "@tanstack/react-query-devtools": "^5.8.4",
+    "@types/react-dom": "^18.2.15",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "@vitejs/plugin-react": "^4.0.3",
+    "cypress": "^13.4.0",
+    "eslint": "^8.45.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.3",
+    "prettier": "^3.0.3",
+    "typescript": "^5.0.2",
+    "vite": "^4.4.5"
+  },
+  "prettier": {
+    "trailingComma": "es5",
+    "tabWidth": 2,
+    "semi": false,
+    "singleQuote": true
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "browser": true,
+      "es2020": true
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:@typescript-eslint/recommended",
+      "plugin:react-hooks/recommended"
+    ],
+    "ignorePatterns": [
+      "dist",
+      "cypress",
+      "cypress.config.ts"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+      "react-refresh"
+    ],
+    "rules": {
+      "sort-imports": [
+        "warn",
+        {
+          "ignoreDeclarationSort": true,
+          "ignoreCase": true
+        }
+      ],
+      "react-refresh/only-export-components": [
+        "warn",
+        {
+          "allowConstantExport": true
+        }
+      ]
+    },
+    "parserOptions": {
+      "ecmaVersion": "latest",
+      "sourceType": "module",
+      "project": [
+        "./tsconfig.json",
+        "./tsconfig.node.json"
+      ],
+      "tsconfigRootDir": "."
+    }
+  }
+}

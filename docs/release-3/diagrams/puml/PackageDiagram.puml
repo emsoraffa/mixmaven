@@ -1,0 +1,67 @@
+@startuml package
+
+package mixmaven {
+
+    component core {
+        package mixmaven.core
+    }
+
+    component json {
+        package mixmaven.json
+    }
+
+    component ui {
+        package mixmaven.ui
+    }
+
+    component springboot {
+        package mixmaven.springboot
+    }
+
+    component javafx 
+    component fxml 
+    component gson 
+
+    database MixMaven {
+        file data
+    }
+
+    ui .d.> javafx #red
+    ui .d.> fxml #red
+
+    mixmaven.ui .d.> mixmaven.json #red
+    mixmaven.ui .d.> mixmaven.core #red
+    mixmaven.ui .r.> mixmaven.springboot #red
+
+    mixmaven.springboot ..> mixmaven.json #red
+    mixmaven.springboot ..> mixmaven.core #red
+
+    mixmaven.json .r.> mixmaven.core #red
+    mixmaven.json .d.> data #red
+    json .d.> gson #red
+}
+
+package webapp {
+    component src {
+        package webapp.components
+        package webapp.api
+        package webapp.pages
+        package webapp.utils
+    }
+
+    component react_query
+    component react
+
+    webapp.pages ..> webapp.components #red
+    webapp.components ..> webapp.api #red
+    webapp.components ..> webapp.utils #red
+    
+    src ..> react_query #red
+    src ..> react #red
+
+    react -[hidden]-> react_query
+}
+
+webapp.api ..> mixmaven.springboot #red : http 
+
+@enduml

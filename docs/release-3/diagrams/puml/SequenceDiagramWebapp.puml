@@ -1,0 +1,24 @@
+@startuml SequenceDiagramWebapp
+
+Actor User #SkyBlue
+participant Home
+participant NewDrink
+participant ReactQuery 
+database API
+
+User -> Home : Click "New drink"
+Home -> User : Navigates to New drink page
+User -> NewDrink : Input drink name and ingredients
+User -> NewDrink : Click Create drink
+NewDrink -> ReactQuery : Mutate with new drink
+ReactQuery -> API : Create new drink
+API -> ReactQuery : OK
+ReactQuery -> Home : Update cached list of drinks
+ReactQuery -> Home : Navigate to home
+Home -> User : Display all drinks
+ReactQuery -> API : Get all drinks
+API -> ReactQuery : OK
+ReactQuery -> Home : Ensures cached list is synced with server
+Home -> User : Display all drinks
+
+@enduml

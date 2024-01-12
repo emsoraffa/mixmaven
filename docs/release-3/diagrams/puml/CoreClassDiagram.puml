@@ -1,0 +1,68 @@
+@startuml CoreClassDiagram
+
+class Constants {
+    +<u>List<String> VALID_UNITS
+    +<u>List<String> VALITYPES
+    +<u>int SCENE_WIDTH
+    +<u>int SCENE_HEIGHT 
+    +<u>int CONTENT_HEIGHT
+    +<u>int FONT_SIZE_40 
+}
+
+class Drink {
+    -String id
+	-String name
+	-List<Ingredient> ingredients
+	-private double alcoholContent
+    
+    +Drink()
+    +Drink()
+    +Drink()
+    +getName()
+    +getIngredients()
+    +getAlcoholContent()
+    -calculateAlcoholContent()
+    +addIngredient()
+    +removeIngredient()
+    +getId()
+    +toString()
+}
+
+class Ingredient {
+    -String name
+    -int alcoholPercentage
+    -double amount
+    -String unit
+    -String type
+
+    +Ingredient()
+    +Ingredient()
+    +getName()
+    +setName()
+    +getAmount()
+    +setAmount()
+    +getAlcoholPercentage()
+    +setAlcoholPercentage()
+    +getUnit()
+    +setUnit()
+    +getType()
+    +setType()
+    +toString()
+}
+
+class MixMavenModel {
+    -List<Drink> drinks;
+
+    +MixMavenModel()
+    +setDrinks()
+    +addDrink()
+    +getDrinks()
+    +getDrink()
+    +removeDrink()
+    +replaceDrink()
+}
+
+Drink "1" --* "*" Ingredient : Contains
+MixMavenModel "1" --* "*" Drink : Contains
+
+@enduml
