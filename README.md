@@ -37,4 +37,4 @@ Home page                                                  |  New/edit drink pag
 
 Home page                                    |  New/edit drink page
 :-------------------------------------------:|:---------------------------------------------:
-![home page](./docs/home_page_expanded.png)  |  ![New drink page](./docs/new_drink_page.png)
+![home page](./docs/release3/home_page_expanded.png)  |  ![New drink page](./docs/release3/new_drink_page.png)
