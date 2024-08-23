@@ -26,6 +26,12 @@ The app has been configurated to work with [eclipse che](https://che.stud.ntnu.n
 2. The project inside the [webapp](./webapp/) folder is a modern alternative to the JavaFX client created with REACT, however it is dependent on the server inside the mixmaven project.
 
     For further information on the webapp and how to run it yourself see this [README](./webapp/README.md).
+### React Client (webapp)
+
+Home page                                    |  New/edit drink page
+:-------------------------------------------:|:---------------------------------------------:
+![home page](./docs/release-3/images/home_page_expanded.png)  |  ![New drink page](./docs/release-3/images/new_drink_page.png)
+
 
 ### JavaFX client (mixmaven.ui)
 
@@ -33,8 +39,3 @@ Home page                                                  |  New/edit drink pag
 :---------------------------------------------------------:|:---------------------------------------------:
 ![home page](./docs/release-2/release-2-browsedrinks.png)  |  ![New drink page](./docs/release-2/release-2-adddrink.png)
 
-### React Client (webapp)
-
-Home page                                    |  New/edit drink page
-:-------------------------------------------:|:---------------------------------------------:
-![home page](./docs/release-3/images/home_page_expanded.png)  |  ![New drink page](./docs/release-3/images/new_drink_page.png)
