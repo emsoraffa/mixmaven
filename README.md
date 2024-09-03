@@ -1,6 +1,6 @@
 # MixMaven
 
-IT1901 Project - MixMaven is an app for managing drink recipes.
+MixMaven is an app for managing drink recipes.
 
 Here you can gather all your drink recipes in one easy to use application. Simply add/edit/delete any recipe you could imagine!
 
